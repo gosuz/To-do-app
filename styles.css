@@ -13,7 +13,6 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #153677, #4e085f);
   padding: 10px;
-
 }
 
 .todo-app{
@@ -31,7 +30,7 @@
   margin-bottom: 20px;
 }
 
-.row{
+/* form{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,15 +38,34 @@
   border-radius: 20px;
   padding-left: 20px;
   margin-bottom: 25px;
-}
+} */
+#inputs{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #edeef0;
+  border-radius: 20px;
+  padding-left: 20px;
+  margin-bottom: 25px;
 
-input{
-  flex: 1;
+
+
+  /* flex: 1;
   border: none;
   outline: none;
   background: transparent;
   padding: 10px;
-  font-weight: 14px;
+  font-weight: 14px; */
+}
+
+#inputs input {
+  border: none;
+  /* background: transparent; */
+}
+
+
+.timespan p{
+  display: inline;
 }
 
 #addTask{

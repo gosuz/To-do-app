@@ -10,11 +10,19 @@
   <div class="container">
     <div class="todo-app">
       <h2>Welcome to your to do list!</h2>
-      <div class="row">
-        <!-- <label for="todo"></label><br> -->
-        <input type="text" id="todo" name="todo" placeholder="To do task 1">
+      <form onsubmit="return false">
+        <div id="inputs">
+          <input type="text" id="todo" name="todo" placeholder="To do task 1">
+          <!-- <label for="hrs">Expected time</label> -->
+          <div id="hrs-container">
+            <input type="integer" min=0 max=23 placeholder=1 id="hrs"> <span class="timespan">hrs</span>
+          </div>
+          <div id="min-container">
+            <input type="integer" min=0 max=59 placeholder=59 id="min"> <span class="timespan">min</span>
+          </div>
+        </div>
         <input type="submit" value="Add task" id="addTask">
-      </div>
+      </form>
       <div class="list-container">
         <!-- Show list -->
         <ul id="list">
@@ -35,3 +43,13 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+
+<!--
+  Input field for hrs
+  Input field for minutes
+
+  Total to be displayed at bottom
+
+
+ -->
