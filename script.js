@@ -37,7 +37,7 @@ addTask.addEventListener("click", (event) => {
     li.innerHTML = todo.value;
     // // let li = `<li>${todo.value}</li>`;
     // list.innerHTML += li;
-    list.appendChild(li); // <ul> <li></li> </ul>
+    list.appendChild(li); // <ul> <li>hr min</li> </ul>
 
     // You want to create an li
     // You want to be able to select whatever li element we just created
