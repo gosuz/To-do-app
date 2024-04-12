@@ -17,11 +17,11 @@
 
 // 	3. Change the dOM
 
+let total = 0;
 
 const todo = document.querySelector("#todo");
 const list = document.querySelector("#list");
 const addTask = document.querySelector("#addTask");
-
 // console.log(todo.value);
 
 addTask.addEventListener("click", (event) => {
@@ -39,15 +39,43 @@ addTask.addEventListener("click", (event) => {
     // list.innerHTML += li;
     list.appendChild(li); // <ul> <li>hr min</li> </ul>
 
+    // let time = document.createElement("span");
+    // let hrs = hrs.value;
+    // console.log(hrs.value);
+    // let min = min.value;
+    // console.log(min.value);
     // You want to create an li
     // You want to be able to select whatever li element we just created
 
+
+    // Get all the minutes, and add them all up
+  // Convert it into hrs and minutes by dividing total/60 (for hrs) and the remainder to be saved as minutes
+
+  // Get all the hrs
+  // Add all the hrs
+  // And add the remaining hrs from the total mins onto the hrs
+
+    let tspan = document.createElement("span");
+    tspan.classList.add("time");
+    let total = `${hrs.value}hrs + ${min.value}min`;
+    tspan.innerHTML = `${hrs.value}hrs ${min.value}min`;
+    li.appendChild(tspan);
+
+    //
+
     let span = document.createElement("span");
+    span.classList.add("x");
     span.innerHTML = "\u00d7";    // Creating x
     // append the span onto the li
     li.appendChild(span);
+
+    // let total = document.createElement("p");
+
+    console.log(total);
   }
   todo.value = '';
+  hrs.value = '';
+  min.value = '';
 });
 
 
@@ -71,3 +99,6 @@ list.addEventListener("click", (event) => {
 // Create a function
 // event listener (he's creating a function to run it)
   // but we can use event listener on the click, and make it either create a message saying add something or submitting and showing the task
+
+
+//
