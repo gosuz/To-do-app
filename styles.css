@@ -24,6 +24,10 @@
   border-radius: 10px;
 }
 
+.todo-app p{
+  margin: 15px;
+}
+
 .todo-app h2{
   display: flex;
   align-items: center;
@@ -136,6 +140,6 @@ ul li .x{
   border-radius: 50%;
 }
 
-ul li span:hover{
+ul li .x:hover{
   background: #edeef0;
 }
