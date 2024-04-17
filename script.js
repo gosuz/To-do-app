@@ -1,5 +1,7 @@
 let total_hrs = 0;
 let total_min = 0;
+let hrs = 0;
+let min = 0;
 
 const todo = document.querySelector("#todo");
 const list = document.querySelector("#list");
@@ -19,8 +21,8 @@ addTask.addEventListener("click", (event) => {
     list.appendChild(li); // <ul> <li>hr min</li> </ul>
 
     let tspan = document.createElement("span");
-    let hrs = parseInt(form.elements.hrs.value, 10);
-    let min = parseInt(form.elements.min.value, 10);
+    hrs = parseInt(form.elements.hrs.value, 10);
+    min = parseInt(form.elements.min.value, 10);
 
     tspan.classList.add("time");
     let total = `${hrs}hrs ${min}min`;
@@ -58,11 +60,11 @@ addTask.addEventListener("click", (event) => {
 
     // Only want to update and show the newest one
     document.getElementById("displayTotal").textContent = total;
+    saveData()
   }
   todo.value = '';
   hrs.value = '';
   min.value = '';
-  saveData();
 });
 
 
@@ -70,10 +72,25 @@ addTask.addEventListener("click", (event) => {
 list.addEventListener("click", (event) => {
   if(event.target.tagName === "LI"){
     event.target.classList.toggle("checked");
+    // for unchecked
+    // Add back the time
+    if(event.target.classList != "checked"){
+      console.log("Unchecked");
+      // Add the time into the total
+      console.log(`Total hrs in click event listnener ${hrs}`);
+      console.log(`Total hrs in click event listnener ${min}`);
+    }
+    else{
+      console.log("Checked")
+      // Substract the time from the total
+
+    }
     saveData();
   }
   else if(event.target.tagName === "SPAN"){
     event.target.parentElement.remove();
+    // make it uncheck and minus stuff
+    // total = total hrs - total min
     saveData();
   }
 });
@@ -135,3 +152,8 @@ And add them together
 possibly a loop inside the else statement??
 
 */
+
+
+// 2 issues:
+// 1. When I remove the thing from the time doesn't change
+// 2. If i refresh the page, then add the time, the current time is replaced by the new time (it doesn't add onto the current time)
